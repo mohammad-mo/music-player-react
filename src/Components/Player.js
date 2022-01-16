@@ -2,23 +2,9 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faAngleLeft, faAngleRight, faPause } from '@fortawesome/free-solid-svg-icons'
 
-const Player = ({ audioRef, currentSong, setCurrentSong, isPlaying, setIsPlaying, songInfo, setSongInfo, songs, setSongs }) =>
+const Player = ({ audioRef, currentSong, setCurrentSong, isPlaying, setIsPlaying, songInfo, setSongInfo, songs, activeLibraryHandler }) =>
 {
-    const activeLibraryHandler = (nextPrev) =>
-    {
-        const newSongs = songs.map(song =>
-            {
-                if (song.id === nextPrev.id)
-                {
-                    return {...song, active: true}
-                }
-                else
-                {
-                    return {...song, active: false}
-                }
-            })
-        setSongs(newSongs)
-    }
+    
 
     // Event Handlers
     const getTime = (time) =>

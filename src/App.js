@@ -40,11 +40,28 @@ const App = () =>
       setSongInfo({ ...setSongInfo, currentTime, duration, animationPercentage })
   }
 
+  const activeLibraryHandler = (nextPrev) =>
+  {
+      const newSongs = songs.map(song =>
+          {
+              if (song.id === nextPrev.id)
+              {
+                  return {...song, active: true}
+              }
+              else
+              {
+                  return {...song, active: false}
+              }
+          })
+      setSongs(newSongs)
+  }
+
   const songEndHandler = async () =>
   {
     const currentIndex = songs.findIndex(song => song.id === currentSong.id)
     await setCurrentSong(songs[(currentIndex + 1) % songs.length])
-
+    activeLibraryHandler(songs[(currentIndex + 1) % songs.length])
+    
     if (isPlaying) audioRef.current.play()
   }
 
@@ -63,6 +80,7 @@ const App = () =>
         setSongs={setSongs}
         songs={songs}
         setSongs={setSongs}
+        activeLibraryHandler={activeLibraryHandler}
       />
       <Library 
         audioRef={audioRef}
