@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: rgb(43, 43, 43);
+}
+
+h3, h4 {
+    font-weight: 400;
+}
+
+.App {
+    transition: all 0.3s ease;
+}
+
+@media screen and (min-width: 768px) {
+    .library-active {
+        margin-left: 20rem;
+    }
+}
+
+// @media screen and (min-width: 768px) and (max-width: 1200px) {
+//     .library-active {
+    
+//         .time-control {
+//             width: 70%;
+//         }
+
+//         .play-control {
+//             width: 60%;
+//         }
+//     }
+// }
+
+@import "./player";
+@import "./song";
+@import "./library";
+@import "./nav"
