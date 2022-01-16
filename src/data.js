@@ -9,7 +9,7 @@ const chillHop = () =>
         "https://chillhop.com/wp-content/uploads/2021/11/4c9682ee612a3b8ef51de286c49b5489408e9257-1024x1024.jpg",
       artist: "Parkbench Epiphany",
       audio: "https://mp3.chillhop.com/serve.php/?mp3=27500",
-      color: ["#2E3E4D", "#668297"],
+      color: ["#668297", "#2E3E4D"],
       id: uuidv4(),
       active: true,
     },
